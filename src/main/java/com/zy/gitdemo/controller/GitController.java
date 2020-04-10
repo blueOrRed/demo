@@ -13,4 +13,9 @@ public class GitController {
     public String print(){
         return "clone pull fetch push --->Git!";
     }
+
+    @GetMapping("localPrint")
+    public void localPrint(){
+        System.out.println("====我是一个无情的打印机器======");
+    }
 }
