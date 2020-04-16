@@ -36,6 +36,6 @@ public class GitController {
         if(username.equals("zyHelloWorld") && password.equals("zyaile00")){
             return "登录成功!";
         }
-        return "登录失败！请重新输入用户名或密码!!";
+        return "登录失败！请重新输入用户名或密码!";
     }
 }
