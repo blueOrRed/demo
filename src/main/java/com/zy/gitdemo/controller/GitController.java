@@ -1,8 +1,14 @@
 package com.zy.gitdemo.controller;
 
+
+import com.zy.gitdemo.demo.UserData;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("git")
@@ -38,4 +44,18 @@ public class GitController {
         }
         return "登录失败！请重新输入用户名或密码!";
     }
+
+    @GetMapping("printDay")
+    public String printStatus(String weekDay){
+        if(weekDay==null || "0".equals(weekDay)){
+            return "您听过有星期零这一说法么?";
+        }
+        for (int i =1; i <=7; i++) {
+            if(weekDay.equals(String.valueOf(i))){
+                return "今天是周"+i;
+            }
+        }
+        return "能给个正常的数字不.....";
+    }
+
 }
